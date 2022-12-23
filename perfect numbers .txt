@@ -1,0 +1,31 @@
+using System;
+using System.Linq;
+
+namespace Discrete2
+{
+	public static class Program
+	{
+		public static void Main()
+		{
+
+			Console.WriteLine("Enter the starting Value");
+			int start = int.Parse(Console.ReadLine());
+
+			Console.WriteLine("Enter the ending Value");
+			int end = int.Parse(Console.ReadLine());
+			Console.WriteLine("The perfect numbers between " + start + "and" + end + ":");
+
+			for (int i = start; i <= end; i++)
+			{
+				int sum = 0;
+				for (int j = 1; j < i; j++)
+				{
+					if (i % j == 0)
+						sum = sum + j;
+				}
+				if (sum == i)
+					Console.WriteLine(i);
+			}
+		}
+	}
+}
